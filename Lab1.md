@@ -31,3 +31,10 @@ Kiến trúc đề xuất cho hệ thống này là kiến trúc Clean Architect
 - Lý do: Persistence đảm bảo rằng tất cả thông tin về nhân viên, thời gian làm việc, lương và các giao dịch liên quan được lưu trữ và có thể truy xuất lại.
 ## c. Security:
 - Lý do: Security đảm bảo những việc sau trong hệ thống bao gồm bảo vệ thông tin cá nhân và tài chính của nhân viên, cũng như thông tin về lương và thời gian làm việc.
+
+# 3. Phân tích ca sử dụng Payment
+## a. Xác định các lớp phân tích cho ca sử dụng Payment
+- Boundary: PaymentMethodForm, ProjectManagementDatabase
+- Control: PaymentController
+- Entity: Employee
+## b. Sequence Diagram
