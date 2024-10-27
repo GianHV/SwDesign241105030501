@@ -39,3 +39,4 @@ Kiến trúc đề xuất cho hệ thống này là kiến trúc Clean Architect
 - Entity: Employee
 ## b. Sequence Diagram
 ![CHESSE!](images/Untitled%20Diagram.drawio.png)
+## c. Class Diagram
