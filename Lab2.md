@@ -187,7 +187,291 @@
      Employee: Đại diện cho employee, chứa các thuộc tính và các phương thức liên quan đến employee
    ### 6.3. <br> ![Class Diagram](https://www.planttext.com/api/plantuml/png/X5DBJiCm4Dtx55PN1QaBRj10MR0eL7p4UkfC6rD_el5u4I5Ene8ZSGKSuxQXfP2DP-Qzf_dcy_rZ6XY8epL2X8rsadn08LYpGNaVdLn0HzuOEP5N1aAGCmrh0Yk4ocw1dsxagv3fgtLe3NGbV8-j9nwVIIdU3XHNtd7_8XKbHLUWAhAtm5gDppAoHeS4Z0bM3QfD2Il25Bm4jtaaS04KQ-yA5j3LloCAZ8ec2H_007Kfkgki5pnqWT6MahXNhv3ctk4FveAqurtbRUyDYXlG_0igdeE3DLfqF0E69GGimZLoPSorROtl48VARImJ9nABUpFBhWEBsGYvXsmkqv1MchFTGjTdcoCtllv6KskLKZuwlersYRHFzQWjAg3wCDMtiF6HmhEd3TQ3lYAf9hLnHtKPmf7Ezr1b-uIzRdyceukHd4poStG9ulWs1lJzUlxcbUNyHpgn6d5wQLlv-MYt7x5Rr03SJlHNyCViX13JTAdfx_i2003__mC0)
    ### 6.4. ![Seuence Diagram](https://www.planttext.com/api/plantuml/png/T5JBZjim3BphAtZS7l83EHIxTb9W3m6Cs8kUkJBNKIrBhaItyBVrq4_gBvIA7tNTRO0SDEPmPYZQltxyV8oCWOVEAXLRuo3uI4gnOKjm7HmKE0PlBHoWfAy3EKrmCjW4x9H2pJv0EKQcBhTUju0Hj7hrWwinZ0ltvJdXByzAUyS2B7W-7Is5zBp8DyJWlv3c2pfig2F79sHynKYfy9GfGGoFSEvwwqUwe-VBWbQc8usXJcYLBsWHZEDPwRg06Rfsif_mh5HAm-6ZM3r25KpJI7sG6VJp31u-1LFZ21BQOcJuxeECh071FgHXc6_8b89AOcbJvCT4dzC-3UmxPACVDhKIkiXJxIaxGaFyPEqIQbicaK_Psf9u20wi4GV-RHr2L3Lj2TRx7jx4gg2tjKg1_2R9y-KkcMuZZHWkn3TVtmlMFZBLT3vVTkBlS3RgCskIgV99vkQ743_Bn6Yd8NUKpbM-qzWJDW8pfLWf6gqUh3mgqSe2oUpk4dQV3ao43erDLzWRtHw6_bwvwNOzGfzsHOZwHhgTU_rbMJPePLqN3_rCcEYpwPtncKXMLlbVPxK9ilLIt_jeU6yinGmaNTBMLW5TJ6szsnYSAhFo295S_V-wrO-i_89bvQB2VpYInMkAyVqqCrkaLFfFwkdbgKtiBOxpvbybJs2HtmuYtvxabL6Fqa8-Gxy1003__mC0)
+   ### 7. Mô phỏng ca sử dụng Maintain timecard
+   Lớp Employee.java
+   ```java
+package Lab2;
 
+public class Employee {
+    private String name;
+    private String employeeId;
+    private String bankInfo;
+    private String socialSecurityNumber;
+    private String address;
+    private String phoneNumber;
+    private String email;
+    private String paymentMethod;
+
+    public Employee(String name, String employeeId, String bankInfo, String socialSecurityNumber,
+        String address, String phoneNumber, String email, String paymentMethod) {
+        this.name = name;
+        this.employeeId = employeeId;
+        this.bankInfo = bankInfo;
+        this.socialSecurityNumber = socialSecurityNumber;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.paymentMethod = paymentMethod;
+    }
+
+    public Employee(String name, String employeeId) {
+        this.name = name;
+        this.employeeId = employeeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getBankInfo() {
+        return bankInfo;
+    }
+
+    public void setBankInfo(String bankInfo) {
+        this.bankInfo = bankInfo;
+    }
+
+    public String getSocialSecurityNumber() {
+        return socialSecurityNumber;
+    }
+
+    public void setSocialSecurityNumber(String socialSecurityNumber) {
+        this.socialSecurityNumber = socialSecurityNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", employeeId='" + employeeId + '\'' +
+                ", bankInfo='" + bankInfo + '\'' +
+                ", socialSecurityNumber='" + socialSecurityNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                '}';
+    }
+}
+```
+   Lớp ProjectManagementDatabase.java
+```java
+package Lab2;
+
+class ProjectManagementDatabase {
+
+    public String[] getChargeCodes() {
+        return new String[] { "DEV", "QA", "PM", "TESTER" };
+    }
+
+    public TimeCard getTimecardForEmployee(String employeeId, String period) {
+        return new TimeCard(0, period);
+    }
+
+    public void saveTimecard(TimeCard timecard) {
+        System.out.println("Da luu the cham cong: " + timecard);
+    }
+}
+```
+   Lớp TimeCard.java
+```java
+package Lab2;
+
+public class TimeCard {
+    private int hoursWorked;
+    private String payPeriod;
+
+    public TimeCard(int hoursWorked, String payPeriod) {
+        this.hoursWorked = hoursWorked;
+        this.payPeriod = payPeriod;
+    }
+
+    public int getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(int hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+
+    public String getPayPeriod() {
+        return payPeriod;
+    }
+
+    public void setPayPeriod(String payPeriod) {
+        this.payPeriod = payPeriod;
+    }
+    
+    public void updateTimeCard(int additionalHours) {
+        this.hoursWorked += additionalHours;
+    }
+
+    public void save() {
+        System.out.println("The cham cong đuoc luu voi" + hoursWorked + " gio cho ma phi" + payPeriod);
+    }
+
+    @Override
+    public String toString() {
+        return "Timecard{" +
+                "hoursWorked=" + hoursWorked +
+                ", payPeriod='" + payPeriod + '\'' +
+                '}';
+    }
+}
+```
+   Lớp TimeCardController.java
+```java
+package Lab2;
+
+import java.util.Arrays;
+
+class TimecardController {
+    private ProjectManagementDatabase database = new ProjectManagementDatabase();
+    private TimeCard currentTimecard;
+
+    public TimecardController() {
+        this.currentTimecard = new TimeCard(0, "2024-11");
+    }
+
+    public TimeCard getCurrentTimecard(String employeeId) {
+        System.out.println("Lay bang cham cong hien tai cua nhan vien: " + employeeId);
+        currentTimecard = database.getTimecardForEmployee(employeeId, "2024-11");
+        if (currentTimecard == null) {
+            System.out.println("Khong tim thay the cham cong cho nhan vien :" + employeeId);
+        }
+        return currentTimecard;
+    }
+
+    public String[] getChargeCodes() {
+        String[] chargeCodes = database.getChargeCodes();
+        System.out.println("Ma phi hien co: " + Arrays.toString(chargeCodes));
+        return chargeCodes;
+    }
+
+    public void updateTimecard(int hours, String chargeCode) {
+        String[] validChargeCodes = getChargeCodes();
+        if (!Arrays.asList(validChargeCodes).contains(chargeCode)) {
+            System.out.println("Ma phi khong hop le: " + chargeCode);
+            return;
+        }
+
+        if (currentTimecard != null) {
+            currentTimecard.updateTimeCard(hours);
+            System.out.println("The cham cong duoc cap nhat voi  " + hours + " gio cho ma phi" + chargeCode);
+            database.saveTimecard(currentTimecard);
+        } else {
+            System.out.println("Hien tai khong co the cham cong đe cap nhat");
+        }
+    }
+
+    public void saveTimecard() {
+        if (currentTimecard != null) {
+            database.saveTimecard(currentTimecard);
+            System.out.println("The cham cong duoc cap nhat thanh cong");
+        } else {
+            System.out.println("Hien tai khong co the cham cong đe luu");
+        }
+    }
+}
+```
+   Lớp TimeCardForm.java
+```java
+package Lab2;
+
+public class TimeCardForm {
+    private TimecardController controller;
+    private Employee employee;
+
+    public TimeCardForm(TimecardController controller, Employee employee) {
+        this.controller = controller;
+        this.employee = employee;
+    }
+
+    public void open() {
+        System.out.println("Mo form nhap the cham cong:");
+        TimeCard timecard = controller.getCurrentTimecard(employee.getEmployeeId());
+        displayTimeCard(timecard);
+    }
+
+    public void displayTimeCard(TimeCard timecard) {
+        System.out.println("Hien thi the cham cong hien tai " + timecard.getHoursWorked() + " so gio trong ky luong "
+                + timecard.getPayPeriod());
+    }
+
+    public void enterHoursForChargeNumber(int hours, String chargeCode) {
+        System.out.println("Nhap gio lay ma cuoc: " + chargeCode);
+        controller.updateTimecard(hours, chargeCode);
+    }
+
+    public void saveTimecard() {
+        controller.saveTimecard();
+        System.out.println("Luu thong tin thanh cong");
+
+        System.out.println(employee.toString());
+    }
+}
+```
+   Lớp Main.java
+```java
+package Lab2;
+
+public class Main {
+    public static void main(String[] args) {
+        Employee employee = new Employee("Duong Thanh Lich", "E123", "BIDV", "054203010030", "Quy Nhon", "0364300445",
+                "thanhlich2103gg@gmail.com", "ATM");
+        TimecardController controller = new TimecardController();
+        TimeCardForm form = new TimeCardForm(controller, employee);
+
+        form.open();
+        form.enterHoursForChargeNumber(8, "Code1"); 
+        form.saveTimecard(); 
+    }
+}
+```
 
 
 
